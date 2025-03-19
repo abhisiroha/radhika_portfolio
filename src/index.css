@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Satoshi;
+    src: url("fonts/Satoshi-Regular.woff2");
+}
+
+@font-face {
+    font-family: NotoSans;
+    src: url("fonts/NotoSans.ttf");
+}
+
+@font-face {
+    font-family: DreamAvenue;
+    src: url("/fonts/Dream_Avenue.ttf");
+}
+
+@theme{
+    --font-satoshi:  Satoshi, "sans-serif";
+    --font-noto-sans: NotoSana, "sans-serif";
+    --font-dream-avenue: DreamAvenue, "sans-serif"
+}
+
+@layer utilities{
+    .bento-tilt_1 {
+    @apply relative border border-white/20  overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    }
+    
+    .bento-tilt_2 {
+    @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    }
+
+    .bento-title {
+    @apply uppercase md:text-6xl text-4xl font-black font-noto-sans;
+    }
+}
