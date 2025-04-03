@@ -1,5 +1,4 @@
 import React from 'react'
-import { IoLogoOctocat } from "react-icons/io5";
 
 const Contact = () => {
   return (

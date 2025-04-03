@@ -33,14 +33,24 @@
     .bento-title {
     @apply uppercase md:text-6xl text-4xl font-black font-noto-sans;
     }
-}
 
-.canvas {
-    position: absolute;
-    width: 100vw;
-    inset: 0;
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: 3s;
-    transition-timing-function: var(--bezierFastoutSlowin);
+    .special-font b {
+        font-family: "dream-avenue";
+        font-feature-settings: "ss01" on;
+      }
+
+    .animated-title {
+        @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
+        }
+    
+    .animated-word {
+        @apply font-dream-avenue font-black opacity-0;
+        transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
+        transform-origin: 50% 50% -150px !important;
+        will-change: opacity, transform;
+    }
+
+    .mask-clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
 }
