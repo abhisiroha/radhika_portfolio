@@ -2,10 +2,13 @@ import React from 'react'
 import Marquee from './marquee'
 import DisplacementSphere from './DisplacementSphere'
 import { DecoderText } from './DecoderText'
+// import { Heading } from './heading/heading'
+import { cssProps } from '../utils/style'
+
 
 const Hero = () => {
   return (
-    <div className='relative h-dvh w-screen overflow-hidden items-center' id='hero'>
+    <div id='hero' className='relative h-dvh w-screen overflow-hidden items-center'>
 
         <DisplacementSphere 
           scale={32}
@@ -22,12 +25,11 @@ const Hero = () => {
           <img src='images/profile.webp' className='size-64 md:size-80 rounded-sm shadow-2xl overflow-hidden'/>
         </div>
         <div className='flex flex-col gap-2 justify-center md:w-xl overflow-hidden'>
-          <h1 className='text-2xl md:text-2xl font-noto-sans'>
+          <h1 className='text-2xl md:text-2xl font-satoshi uppercase'>
           <DecoderText text="Hi I am Radhika" delay={500}/>
           </h1>
-          {/* <p className='text-2xl md:text-2xl font-noto-sans'>Hi I am Radhika</p> */}
-          <p className='text-4xl md:text-6xl font-dream-avenue'>A Curious Solution Crafter</p>
-          <p className='text-2xl md:text-2xl font-noto-sans'>I believe in constantly evolving, turning every challenge into a canvas and every experience into a masterpiece.</p>
+         
+          <p className='text-xl md:text-2xl font-noto-sans'>I believe in constantly evolving, turning every challenge into a canvas and every experience into a masterpiece.</p>
         </div>
       </div>
       <div className='absolute bottom-0 w-screen overflow-hidden'>

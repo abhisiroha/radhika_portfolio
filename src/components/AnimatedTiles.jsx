@@ -1,55 +1,48 @@
-import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import React from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import clsx from "clsx";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
-const AnimatedTiles = ({title, containerClass}) => {
-  const containerRef = useRef(null)
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const titleAnimation = gsap.timeline({
+export const AnimatedTiles = ({title, textClass}) => {
+
+  const container = useRef(null)
+
+  useGSAP( () =>{
+    const ctx = gsap.context(()=> {
+      const tl= gsap.timeline({
         scrollTrigger: {
-          trigger: containerRef.current,
+          trigger: container.current,
           start: "100 bottom",
-          end: "center bottom",
+          end: "-100 top",
           toggleActions: "play none none reverse",
-        },
-      });
-
-      titleAnimation.to(
-        ".animated-word",
+          // scrub: 0.25
+          // markers:true
+          },
+      })
+      tl.fromTo(container.current,
         {
-          opacity: 1,
-          transform: "translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg)",
-          ease: "power2.inOut",
-          stagger: 0.02,
-        },
-        0
-      );
-    }, containerRef);
+        transform: "translate3d(100px, 51px, -60px) rotateY(60deg) rotateX(-40deg)",
+        opacity: 0,
+        transformOrigin: "100% 50% -150px",
 
-    return () => ctx.revert(); // Clean up on unmount
+        },
+        {
+        ease:'power2.inOut',
+        transform: "translate3d(0px, 0px, 0px) rotateY(0deg) rotateX(0deg)",
+        opacity: 1,
+        },
+       );
+    }, container);
+    return () => ctx.revert();
   }, []);
   return (
-    <div ref={containerRef} className={clsx("animated-title", containerClass)}>
-      {title.split("<br />").map((line, index) => (
-        <div
-          key={index}
-          className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3"
-        >
-          {line.split(" ").map((word, idx) => (
-            <span
-              key={idx}
-              className="animated-word"
-              dangerouslySetInnerHTML={{ __html: word }}
-            />
-          ))}
-        </div>
-      ))}
-    </div>
-  );
+    <div  className='relative flex font-dream-avenue'>
+        <h1 ref={container} className='text-5xl font-bold'>
+            {title}
+          </h1>
+      </div>
+  )
 }
-
-export default AnimatedTiles

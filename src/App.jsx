@@ -6,7 +6,7 @@ import Contact from './components/Contact'
 
 const App = () => {
   return (
-    <main className='relative h-dvh w-screen overflow-x-hidden'>
+    <main className='relative w-full overflow-x-hidden'>
       <Hero/>
       <Projects/>
       <About/>

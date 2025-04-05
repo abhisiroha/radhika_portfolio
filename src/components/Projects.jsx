@@ -1,37 +1,43 @@
 import React from 'react'
-import gsap from "gsap";
 import { BentoCard, BentoTilt } from './Bento'
-import AnimatedTitle from './AnimatedTiles'
-import { ScrollTrigger } from "gsap/all";
+import { AnimatedTiles } from './AnimatedTiles'
 
-gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
 
   return (
-    <div className='relative overflow-x-hidden px-8 md:px-32 pt-8'>
+    <div id="projects" className='h-dvh w-full relative items-center overflow-x-hidden px-8 md:px-32 pt-20'>
 
-      <div className='flex flex-col gap-2 pb-8'>
-        <h1 className='text-4xl md:text-7xl text-center font-bold font-dream-avenue'>Selected <br/> Work</h1>
-        {/* <AnimatedTitle
-          title="Selected <br/> Work"
-          containerClass="mt-5 !text-black text-center"
-        /> */}
-        <p className='font-satoshi overflow-hidden'>Have a look around some of my selected projects that created impact.</p>
+      <div className='flex flex-col gap-2 pb-4'>
+        <AnimatedTiles title="Selected Work"/>
       </div>
 
-      <BentoTilt className="relative  w-full overflow-hidden rounded-md md:h-[65vh]">
-        <BentoCard
-          src="videos/cat.mp4"
-          url={"https://www.youtube.com"}
-          title={
-            <>
-              Lorem ipsum
-            </>
-          }
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corporis quas repellendus sit dolore tempore in, nobis ex temporibus deserunt illo sunt a debitis nulla sint molestiae illum cum excepturi!"
-        />
-      </BentoTilt>
+      <div className='relative flex flex-col md:flex-row gap-12 items-center justify-center h-7/8'>
+        <BentoTilt className="h-1/2 md:h-full w-full md:w-1/2 overflow-hidden rounded-md">
+          <BentoCard
+            src=""
+            url={"https://www.youtube.com"}
+            title={
+              <>
+                Case Study
+              </>
+            }
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corporis quas repellendus sit dolore tempore in, nobis ex temporibus deserunt illo sunt a debitis nulla sint molestiae illum cum excepturi!"
+          />
+        </BentoTilt>
+        <BentoTilt className="h-1/2 md:h-full w-full md:w-1/2 overflow-hidden rounded-md">
+          <BentoCard
+            src=""
+            url={"https://www.youtube.com"}
+            title={
+              <>
+                Rsearch
+              </>
+            }
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corporis quas repellendus sit dolore tempore in, nobis ex temporibus deserunt illo sunt a debitis nulla sint molestiae illum cum excepturi!"
+          />
+        </BentoTilt>
+      </div>
 
     </div>
   )
