@@ -71,8 +71,8 @@ const About = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-4">
-        <BentoTilt className="h-1/2 md:h-92 w-full md:w-4/10 overflow-hidden rounded-md">
-          <div className=" flex flex-col gap-4 size-full w-full bg-website-organge p-6">
+        <BentoTilt className="h-1/2 md:h-92 w-full md:w-4/10 overflow-hidden">
+          <div className=" flex flex-col gap-4 size-full w-full bg-website-organge p-6 rounded-3xl">
             <h1 className="relative font-satoshi text-2xl font-bold text-brown-font ">
               Current Favourites
             </h1>
@@ -85,8 +85,8 @@ const About = () => {
           </div>
         </BentoTilt>
 
-        <BentoTilt className="h-1/2 md:h-92 w-full md:w-6/10 overflow-hidden rounded-md">
-          <div className=" flex flex-col gap-4 size-full w-full bg-website-organge p-6">
+        <BentoTilt className="h-1/2 md:h-92 w-full md:w-6/10 overflow-hidden">
+          <div className=" flex flex-col gap-4 size-full w-full bg-website-organge p-6 rounded-3xl">
             <h1 className="relative font-satoshi text-2xl font-bold text-brown-font ">
               Life Lately
             </h1>
