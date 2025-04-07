@@ -1,12 +1,45 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive portfolio website built with React, Tailwind and GSAP.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To get started, follow these steps:
 
-## Expanding the ESLint configuration
+1. Clone the repository:
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+git clone https://github.com/abhisiroha/radhika_portfolio.git
+```
+
+2. Navigate to the project directory:
+
+```
+cd radhika_portfolio
+```
+
+3. Install the dependencies:
+
+```
+npm install
+```
+
+4. Start the development server:
+
+```
+npm run dev
+```
+
+The website should now be running at `http://localhost:5173`.
+
+## Usage
+
+The portfolio website consists of the following sections:
+
+1. **Hero**: Displays a hero section with a brief introduction and a call-to-action button.
+2. **Projects**: Showcases a list of projects with descriptions and links.
+3. **About**: Provides information about the developer.
+4. **Contact**: Includes a contact form for users to get in touch.
+5. **Navbar**: Allows navigation between the different sections of the website.
+
+You can customize the content and styling of these components by modifying the corresponding files in the `src/components` directory.
