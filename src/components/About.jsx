@@ -43,8 +43,8 @@ const carouselItems = [
 
 
 const About = () => (
-    <div id="about" className=" px-8 md:px-32 pt-8">
-      <div className="pb-4">
+    <div id="about" className=" px-8 md:px-32 pt-25">
+      <div className="pb-12">
         <AnimatedTiles title="About"/>
       </div>
 

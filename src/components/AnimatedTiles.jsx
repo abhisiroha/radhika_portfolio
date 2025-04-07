@@ -39,8 +39,8 @@ export const AnimatedTiles = ({title, textClass}) => {
     return () => ctx.revert();
   }, []);
   return (
-    <div  className='relative flex font-dream-avenue'>
-        <h1 ref={container} className='text-5xl font-bold'>
+    <div  className='relative flex font-satoshi'>
+        <h1 ref={container} className='text-5xl'>
             {title}
           </h1>
       </div>

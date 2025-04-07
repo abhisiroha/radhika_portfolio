@@ -8,7 +8,7 @@ const Projects = () => {
   return (
     <div id="work" className='h-dvh w-full relative items-center overflow-x-hidden px-8 md:px-32 pt-20'>
 
-      <div className='flex flex-col gap-2 pb-4'>
+      <div className='flex flex-col gap-2 pb-12'>
         <AnimatedTiles title="Selected Work"/>
       </div>
 
