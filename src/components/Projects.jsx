@@ -6,7 +6,7 @@ import { AnimatedTiles } from './AnimatedTiles'
 const Projects = () => {
 
   return (
-    <div id="projects" className='h-dvh w-full relative items-center overflow-x-hidden px-8 md:px-32 pt-20'>
+    <div id="work" className='h-dvh w-full relative items-center overflow-x-hidden px-8 md:px-32 pt-20'>
 
       <div className='flex flex-col gap-2 pb-4'>
         <AnimatedTiles title="Selected Work"/>

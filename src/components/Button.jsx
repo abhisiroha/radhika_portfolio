@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 
-const Button = () => {
+const Button = ({buttonTitle="Check Out"}) => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
       const [hoverOpacity, setHoverOpacity] = useState(0);
       const hoverButtonRef = useRef(null);
@@ -21,7 +21,7 @@ const Button = () => {
       const handleMouseLeave = () => setHoverOpacity(0);
     
       const handleClick = () => {
-        window.open(url, "_blank", "noopener,noreferrer");
+        window.open("contact", "_blank", "noopener,noreferrer");
       };
   return (
     <div
@@ -40,7 +40,7 @@ const Button = () => {
               }}
             />
             <TiLocationArrow className="relative z-20" />
-            <p className="relative z-20">Check Out</p>
+            <p className="relative z-20">{buttonTitle}</p>
           </div>
   )
 }
