@@ -11,15 +11,16 @@ import SkillIcon from './SkillIcon'
 const Hero = () => {
   return (
     <div id='home' className='relative h-dvh w-screen overflow-hidden items-center justify-center'>
-      <div className='absolute flex flex-col gap-4 bottom-2 md:top-1/4 left-0 md:left-1/12 w-full md:w-1/2 items-center md:items-start px-4'>
-        <h1 className='text-3xl md:text-6xl font-satoshi text-center uppercase z-10'>
-          <DecoderText text="Hi I am Radhika" delay={500} />
+      <div className='absolute flex flex-col gap-4 bottom-0 md:top-1/4 left-0 md:left-1/12 w-full md:w-1/2 items-left md:items-start px-4'>
+        <h1 className='text-3xl md:text-6xl font-satoshi text-left z-10'>
+          <h1 className='text-lg '> Hi</h1>
+          <DecoderText text="I am Radhika" delay={500} />
         </h1>
         <div className='flex items-center justify-start gap-2 '>
           <p className='text-black text-lg md:text-2xl  font-satoshi'>Creative</p>
           <RotatingText
             texts={['Thinker', 'Designer', 'Painter', 'Researcher']}
-            mainClassName=" text-black text-xl md:text-4xl font-bold font-dream-avenue bg-highlist-organge overflow-hidden justify-center item-center rounded-lg w-30 md:w-50 pt-2"
+            mainClassName=" text-white text-xl md:text-4xl font-bold font-satoshi bg-highlist-organge overflow-hidden justify-center item-center rounded-lg w-30 md:w-50"
             staggerFrom={"last"}
             initial={{ y: "10%" }}
             animate={{ y: 0 }}
@@ -29,9 +30,7 @@ const Hero = () => {
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
             rotationInterval={2000} />
         </div>
-        <p className=' text-xl md:text-2xl text-center md:text-start font-satoshi'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed voluptatibus, adipisci hic inventore
-        </p>
+
         <div className='flex gap-2 md:gap-4  '>
           <SkillIcon iconSrc={"icons/figma.svg"} iconText={"Figma"}/>
           <SkillIcon iconSrc={"icons/illustrator.svg"} iconText={"Illustrator"}/>
