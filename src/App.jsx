@@ -7,8 +7,7 @@ import NavBar from './components/Navbar'
 
 const App = () => {
   return (
-    <main className='relative w-full overflow-x-hidden'>
-      
+    <main className='relative w-full overflow-x-hidden scroll-smooth'>
       <Hero/>
       <Projects/>
       <About/>

@@ -15,8 +15,8 @@ export const AnimatedTiles = ({title, textClass}) => {
       const tl= gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
-          start: "100 bottom",
-          end: "-100 top",
+          start: "top bottom",
+          end: "bottom top",
           toggleActions: "play none none reverse",
           // scrub: 0.25
           // markers:true

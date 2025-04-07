@@ -41,7 +41,7 @@ export const BentoTilt = ({ children, className = ""}) => {
 export const BentoCard = ({title, description, url}) => {
 
   return (
-    <div className="relative size-full bg-website-organge">
+    <div className="relative size-full bg-website-organge rounded-3xl">
       <div className="relative z-10 flex size-full flex-col justify-between p-5">
         <div>
           <h1 className="bento-title">{title}</h1>
