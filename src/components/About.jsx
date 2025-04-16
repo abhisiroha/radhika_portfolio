@@ -43,12 +43,12 @@ const carouselItems = [
 
 const About = () => {
   return (
-    <div id="about" className=" px-8 md:px-48 pt-25">
+    <div id="about" className=" px-8 md:px-56 pt-24">
       <div className="pb-12">
         <AnimatedTiles title="About" />
       </div>
 
-      <div className="flex flex-col md:flex-row gap-6 w-full">
+      <div className="flex flex-col md:flex-row gap-8 w-full pb-4">
         <BentoTilt className="relative mb-4 w-full md:w-2/3 overflow-hidden rounded-md md:h-[65vh]">
           <div className="flex flex-col bg-website-organge rounded-3xl h-[40vh] md:h-[65vh] gap-8 md:gap-24  p-8">
             <p className="font-satoshi text-xl md:text-3xl/relaxed font-normal text-brown-font">
@@ -69,7 +69,7 @@ const About = () => {
 
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex flex-col md:flex-row gap-8">
         <BentoTilt className="h-1/2 md:h-92 w-full md:w-4/10 overflow-hidden">
           <div className=" flex flex-col gap-4 size-full w-full bg-website-organge p-6 rounded-3xl">
             <h1 className="relative font-satoshi text-2xl font-bold text-brown-font ">

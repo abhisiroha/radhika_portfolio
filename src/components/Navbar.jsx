@@ -41,7 +41,7 @@ const NavBar = () => {
       {/* Navbar */}
       <div
         ref={navContainerRef}
-        className="fixed inset-x-0 top-4 z-50 transition-all duration-700 sm:inset-x-6 bg-black rounded-4xl  mx-4"
+        className="fixed inset-x-0 top-4 z-50 transition-all duration-700 sm:inset-x-6 bg-black rounded-4xl mx-4  md:mx-48 px-8"
       >
         <header className="relative">
           <nav className="flex items-center justify-between px-4 py-3">
