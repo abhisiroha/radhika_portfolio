@@ -16,7 +16,7 @@ const Hero = () => (
       blend={1.5}
       amplitude={1}
       speed={1} />
-    <div className='absolute flex flex-col gap-8 bottom-0 md:top-1/4 left-0 md:left-1/12 w-full md:w-1/2 items-left md:items-start px-4'>
+    <div className='absolute flex flex-col gap-8 bottom-0 md:top-1/4 left-0 md:left-1/12 w-full md:w-1/2 items-left md:items-start px-8 md:px-16'>
       <h1 className='text-3xl md:text-6xl font-satoshi font-bold text-left z-10'>
         <p className='text-2xl '> Hi</p>
         <DecoderText text="I am Radhika" delay={500} />
@@ -44,7 +44,9 @@ const Hero = () => (
         <SkillIcon iconSrc={"icons/notion.svg"} iconText={"Notion"} />
       </div>
 
-      <Button buttonTitle={`Let's Connect`} />
+      <a href='#contact'>
+        <Button buttonTitle={`Let's Connect`}/>
+      </a>
 
     </div>
     <div className='absolute top-0 z-0 h-full w-full left-0 '>

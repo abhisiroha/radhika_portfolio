@@ -6,26 +6,23 @@ import { AnimatedTiles } from './AnimatedTiles'
 const Projects = () => {
 
   return (
-    <div id="work" className='h-full w-full relative items-center overflow-x-hidden px-8 md:px-32 pt-8'>
+    <div id="work" className='h-screen w-full relative items-center overflow-x-hidden px-8 md:px-48 pt-8 py-4'>
 
       <div className='flex flex-col gap-2 pb-12'>
         <AnimatedTiles title="Selected Work"/>
       </div>
 
       <div className='relative flex flex-col md:flex-row gap-12 items-center justify-center h-7/8'>
-        <BentoTilt className="h-1/2 md:h-full w-full md:w-1/2 overflow-hidden rounded-md">
+        <BentoTilt className="h-full w-full overflow-hidden rounded-md">
           <BentoCard
-            src=""
-            url={"https://www.youtube.com"}
             title={
               <>
-                Case Study
+                Boosting adoption rate by 35%: A UX case study on milestone-driven rewards for kirana stores
               </>
             }
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corporis quas repellendus sit dolore tempore in, nobis ex temporibus deserunt illo sunt a debitis nulla sint molestiae illum cum excepturi!"
           />
         </BentoTilt>
-        <BentoTilt className="h-1/2 md:h-full w-full md:w-1/2 overflow-hidden rounded-md">
+        {/* <BentoTilt className="h-1/2 md:h-full w-full md:w-1/2 overflow-hidden rounded-md">
           <BentoCard
             src=""
             url={"https://www.youtube.com"}
@@ -36,7 +33,7 @@ const Projects = () => {
             }
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio corporis quas repellendus sit dolore tempore in, nobis ex temporibus deserunt illo sunt a debitis nulla sint molestiae illum cum excepturi!"
           />
-        </BentoTilt>
+        </BentoTilt> */}
       </div>
 
     </div>

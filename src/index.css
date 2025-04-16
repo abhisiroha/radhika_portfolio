@@ -40,7 +40,7 @@ html {
 
 @layer utilities{
     .bento-tilt_1 {
-    @apply relative border border-white/20  overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative border  overflow-hidden rounded-md transition-transform duration-300 ease-out;
     }
 
     /* .bento-tilt_2 {
@@ -48,7 +48,7 @@ html {
     } */
 
     .bento-title {
-    @apply uppercase md:text-6xl text-4xl font-black font-noto-sans;
+    @apply text-xl md:text-4xl text-brown-font font-satoshi px-4;
     }
 
     .special-font b {

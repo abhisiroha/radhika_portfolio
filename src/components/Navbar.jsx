@@ -2,57 +2,31 @@ import clsx from "clsx";
 import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
-import { TiLocationArrow } from "react-icons/ti";
-
-import Button from "./Button";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const navItems = ["Home", "Work", "About", "Contact"];
 
 const NavBar = () => {
-  // State for toggling audio and visual indicator
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
-
-  // Refs for audio and navigation container
-  const audioElementRef = useRef(null);
-  const navContainerRef = useRef(null);
-
-  const { y: currentScrollY } = useWindowScroll();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Toggle audio and visual indicator
-  const toggleAudioIndicator = () => {
-    setIsAudioPlaying((prev) => !prev);
-    setIsIndicatorActive((prev) => !prev);
-  };
-
-  // Manage audio playback
-  useEffect(() => {
-    if (isAudioPlaying) {
-      audioElementRef.current.play();
-    } else {
-      audioElementRef.current.pause();
-    }
-  }, [isAudioPlaying]);
+  const navContainerRef = useRef(null);
+  const { y: currentScrollY } = useWindowScroll();
 
   useEffect(() => {
     if (currentScrollY === 0) {
-      // Topmost position: show navbar without floating-nav
       setIsNavVisible(true);
-      navContainerRef.current.classList.remove("floating-nav");
+      navContainerRef.current?.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
-      // Scrolling down: hide navbar and apply floating-nav
       setIsNavVisible(false);
-      navContainerRef.current.classList.add("floating-nav");
+      navContainerRef.current?.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
-      // Scrolling up: show navbar with floating-nav
       setIsNavVisible(true);
-      navContainerRef.current.classList.add("floating-nav");
+      navContainerRef.current?.classList.add("floating-nav");
     }
-
     setLastScrollY(currentScrollY);
-  }, [currentScrollY, lastScrollY]);
+  }, [currentScrollY]);
 
   useEffect(() => {
     gsap.to(navContainerRef.current, {
@@ -63,57 +37,69 @@ const NavBar = () => {
   }, [isNavVisible]);
 
   return (
-    <div
-      ref={navContainerRef}
-      className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6 bg-black rounded-4xl"
-    >
-      <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4">
-          {/* Logo and Product button */}
-          <div className="flex items-center gap-7 pl-6  text-white">
-            <img src="/icons/icon_website_white.svg" alt="logo" className="size-12" />
-          </div>
+    <>
+      {/* Navbar */}
+      <div
+        ref={navContainerRef}
+        className="fixed inset-x-0 top-4 z-50 transition-all duration-700 sm:inset-x-6 bg-black rounded-4xl  mx-4"
+      >
+        <header className="relative">
+          <nav className="flex items-center justify-between px-4 py-3">
+            {/* Logo */}
+            <div className="flex items-center gap-4 text-white">
+              <img
+                src="/icons/icon_website_white.svg"
+                alt="logo"
+                className="size-12"
+              />
+            </div>
 
-          {/* Navigation Links and Audio Button */}
-          <div className="flex h-full items-center ">
-            <div className="hidden md:block">
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-6 pr-4">
               {navItems.map((item, index) => (
                 <a
                   key={index}
                   href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
+                  className="nav-hover-btn text-white"
                 >
                   {item}
                 </a>
               ))}
             </div>
 
-            <button
-              onClick={toggleAudioIndicator}
-              className="ml-10 flex items-center space-x-0.5"
+            {/* Hamburger Icon */}
+            <div className="md:hidden text-white text-2xl pr-2">
+              <button onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
+                {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+              </button>
+            </div>
+          </nav>
+        </header>
+      </div>
+
+      {/* Mobile Menu Dropdown (separate to avoid clipping) */}
+      <div
+        className={clsx(
+          "fixed top-[60px] left-4 right-4 z-40 rounded-b-4xl bg-black transition-all duration-300 ease-in-out md:hidden p-2",
+          isMobileMenuOpen
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-4 pointer-events-none"
+        )}
+      >
+        <div className="flex flex-col items-center gap-4 py-5 border-t border-white/10">
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white text-lg hover:text-gray-400 transition"
             >
-              <audio
-                ref={audioElementRef}
-                className="hidden"
-                src="/audio/loop.mp3"
-                loop
-              />
-              {[1, 2, 3, 4].map((bar) => (
-                <div
-                  key={bar}
-                  className={clsx("indicator-line", {
-                    active: isIndicatorActive,
-                  })}
-                  style={{
-                    animationDelay: `${bar * 0.1}s`,
-                  }}
-                />
-              ))}
-            </button>
-          </div>
-        </nav>
-      </header>
-    </div>
+              {item}
+            </a>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

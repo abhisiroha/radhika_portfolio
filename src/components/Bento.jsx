@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
 
 export const BentoTilt = ({ children, className = ""}) => {
@@ -38,21 +38,48 @@ export const BentoTilt = ({ children, className = ""}) => {
   );
 };
 
-export const BentoCard = ({title, description, url}) => {
+export const BentoCard = ({title, description}) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      },
+      {
+        threshold: 0.3, // 30% of the video must be visible
+      }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <div className="relative size-full bg-website-organge rounded-3xl">
-      <div className="relative z-10 flex size-full flex-col justify-between p-5">
+    <div className="relative size-full rounded-3xl overflow-hidden">
+      <video ref={videoRef} src="videos/app.mp4" className="absolute z-0 h-full w-full object-cover " autoPlay muted loop playsInline></video>
+      <div className="relative z-30 flex size-full flex-col justify-between p-5">
         <div>
           <h1 className="bento-title">{title}</h1>
           {description && (
             <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
           )}
         </div>
-
-        <Button/>
-
-
+        <Button buttonTitle="Case Study" href={"https://medium.com/design-bootcamp/boosting-adoption-rate-by-35-a-ux-case-study-on-milestone-driven-rewards-for-kirana-stores-febb58e7c540"} />
       </div>
     </div>
   );

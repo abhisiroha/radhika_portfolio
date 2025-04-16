@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useRef } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 
-const Button = ({buttonTitle="Check Out"}) => {
+const Button = ({buttonTitle="Check Out", href=""}) => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
       const [hoverOpacity, setHoverOpacity] = useState(0);
       const hoverButtonRef = useRef(null);
@@ -21,8 +21,22 @@ const Button = ({buttonTitle="Check Out"}) => {
       const handleMouseLeave = () => setHoverOpacity(0);
     
       const handleClick = () => {
-        window.open("contact", "_blank", "noopener,noreferrer");
-      };
+        if (href) {
+            let targetUrl = href; // Start with the original href
+    
+            // Check if the href *doesn't* start with 'http://' or 'https://' (case-insensitive)
+            if (!/^https?:\/\//i.test(href)) {
+                // If it doesn't look like an absolute URL, prepend 'https://'
+                // This assumes you want HTTPS, which is standard practice.
+                targetUrl = `https://${href}`;
+                console.log(`Prepending 'https://' to relative href. Opening: ${targetUrl}`); // Optional: for debugging
+            }
+    
+            // Use the (potentially modified) targetUrl
+            window.open(targetUrl, "_blank", "noopener,noreferrer");
+        }
+        
+    };
   return (
     <div
             ref={hoverButtonRef}

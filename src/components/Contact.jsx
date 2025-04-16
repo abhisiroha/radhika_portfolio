@@ -5,7 +5,7 @@ import ContactList from './ContactList'
 const Contact = () => {
 
   return(
-  <div id='contact' className='relative w-screen overflow-x-hidden p-8 md:px-32'>
+  <div id='contact' className='relative w-screen overflow-x-hidden p-8 md:px-48'>
     <div className='flex flex-row h-48 overflow-x-hidden bg-website-organge rounded-2xl md:px-6'>
 
       <div className='flex flex-col justify-start pt-4 px-4 gap-4'>

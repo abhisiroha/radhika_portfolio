@@ -8,25 +8,24 @@ const carouselItems = [
   {
     id: 1,
     content: (
-      <div className="h-64 sm:h-96 bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center">
-        <h2 className="text-3xl sm:text-5xl font-bold text-white">Slide 1</h2>
+      <div className="flex h-64 sm:h-80 justify-center items-center">
+        <img src="images/me.webp" className="h-full "/>
       </div>
     ),
   },
   {
     id: 2,
     content: (
-      <div className="h-64 sm:h-96 bg-gradient-to-r from-blue-500 to-indigo-500 flex items-center justify-center">
-        <h2 className="text-3xl sm:text-5xl font-bold text-white">Slide 2</h2>
+      <div className="flex h-64 sm:h-80 justify-center items-center">
+        <img src="images/paint.webp" className="h-full "/>
       </div>
     ),
   },
   {
     id: 3,
     content: (
-       // Example with an image
-       <div className="h-64 sm:h-96 bg-gradient-to-r from-indigo-500 to-violet-500 flex items-center justify-center">
-        <h2 className="text-3xl sm:text-5xl font-bold text-white">Slide 3</h2>
+       <div className="flex h-64 sm:h-80 justify-center items-center">
+        <img src="images/fort.webp" className="h-full "/>
       </div>
        
     ),
@@ -34,8 +33,8 @@ const carouselItems = [
    {
     id: 4,
     content: (
-      <div className="h-64 sm:h-96 bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center">
-        <h2 className="text-3xl sm:text-5xl font-bold text-white">Slide 4</h2>
+      <div className="flex h-64 sm:h-80 justify-center items-center">
+        <img src="images/wall.webp" className="h-full "/>
       </div>
     ),
   },
@@ -44,7 +43,7 @@ const carouselItems = [
 
 const About = () => {
   return (
-    <div id="about" className=" px-8 md:px-32 pt-25">
+    <div id="about" className=" px-8 md:px-48 pt-25">
       <div className="pb-12">
         <AnimatedTiles title="About" />
       </div>
@@ -90,7 +89,7 @@ const About = () => {
             <h1 className="relative font-satoshi text-2xl font-bold text-brown-font ">
               Life Lately
             </h1>
-            <Carousel items={carouselItems} />
+            <Carousel items={carouselItems} autoPlay={true} autoPlayDelay={3000} />
           </div>
         </BentoTilt>
       </div>
