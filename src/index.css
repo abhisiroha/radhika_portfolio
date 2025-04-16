@@ -10,23 +10,8 @@ html {
 
 @font-face {
     font-family: Satoshi;
-    src: url("fonts/Satoshi-Regular.woff2");
+    src: url("/public/fonts/Satoshi-Regular.woff2");
 }
-
-@font-face {
-    font-family: NotoSans;
-    src: url("fonts/NotoSans.ttf");
-}
-
-@font-face {
-    font-family: DreamAvenue;
-    src: url("/fonts/Dream_Avenue.ttf");
-}
-
-@font-face {
-    font-family: Zentry;
-    src: url("/fonts/zentry-regular.woff2") format("woff2");
-  }
 
 @theme{
     --font-satoshi:  Satoshi, "sans-serif";
