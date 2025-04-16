@@ -10,7 +10,7 @@ html {
 
 @font-face {
     font-family: Satoshi;
-    src: url("/public/fonts/Satoshi-Regular.woff2");
+    src: url("/fonts/Satoshi-Regular.woff2");
 }
 
 @theme{
@@ -33,7 +33,7 @@ html {
     } */
 
     .bento-title {
-    @apply text-xl md:text-4xl text-brown-font font-satoshi px-4;
+    @apply text-xl md:text-2xl font-satoshi px-4;
     }
 
     .special-font b {
