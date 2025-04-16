@@ -29,7 +29,7 @@ const Projects = () => (
           vidLink='images/case_research.webp'
           />
         </BentoTilt>
-        <p className="bento-title pt-4 text-pretty">Boosting adoption rate by 35%: A UX case study on milestone-driven rewards for kirana stores</p>
+        <p className="bento-title pt-4 text-pretty">The Bharat UX Field Guide</p>
       </div>
     </div>
 
