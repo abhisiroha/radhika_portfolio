@@ -17,7 +17,7 @@ const Projects = () => {
           <BentoCard
             title={
               <>
-                Boosting adoption rate by 35%: A UX case study on milestone-driven rewards for kirana stores
+                Boosting adoption rate by 35%:<br/> A UX case study on <br/>milestone-driven rewards for <br/> kirana stores
               </>
             }
           />

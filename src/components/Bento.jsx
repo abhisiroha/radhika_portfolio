@@ -70,8 +70,8 @@ export const BentoCard = ({title, description}) => {
   }, []);
 
   return (
-    <div className="relative size-full rounded-3xl overflow-hidden">
-      <video ref={videoRef} src="videos/app.mp4" className="absolute z-0 h-full w-full object-cover " autoPlay muted loop playsInline></video>
+    <div className="relative size-full rounded-3xl overflow-hidden ">
+      <video ref={videoRef} src="videos/app.mp4" className="absolute z-0 object-center " autoPlay muted loop playsInline></video>
       <div className="relative z-30 flex size-full flex-col justify-between p-5">
         <div>
           <h1 className="bento-title">{title}</h1>
