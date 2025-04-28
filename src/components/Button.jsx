@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState, useRef } from "react";
-import { TiLocationArrow } from "react-icons/ti";
+import { TiLocationArrow  } from "react-icons/ti";
+import { FaArrowDownLong } from "react-icons/fa6";
 
-const Button = ({buttonTitle="Check Out", href=""}) => {
+const Button = ({buttonTitle="Check Out", href="", iconType="location"}) => {
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
       const [hoverOpacity, setHoverOpacity] = useState(0);
       const hoverButtonRef = useRef(null);
@@ -37,6 +38,17 @@ const Button = ({buttonTitle="Check Out", href=""}) => {
         }
         
     };
+
+      const renderIcon = () => {
+        // const commonClasses = ;
+        if (iconType === "location") {
+          return <TiLocationArrow className="relative size-6 z-20" />;
+        } else if (iconType === "down") {
+          return <FaArrowDownLong className="relative size-4 z-20" />;
+        }
+        return null;
+      };
+
   return (
     <div
             ref={hoverButtonRef}
@@ -53,7 +65,7 @@ const Button = ({buttonTitle="Check Out", href=""}) => {
                 background: `radial-gradient(100px circle at ${cursorPosition.x}px ${cursorPosition.y}px, #850B0588, #ffffff30)`,
               }}
             />
-            <TiLocationArrow className="relative z-20" />
+            {renderIcon()}
             <p className="relative z-20">{buttonTitle}</p>
           </div>
   )

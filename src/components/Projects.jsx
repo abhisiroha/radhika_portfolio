@@ -26,6 +26,7 @@ const Projects = () => (
         <BentoTilt className="h-7/8 overflow-hidden rounded-md">
           <BentoCardImage
           buttonText='Research'
+          link='https://medium.com/design-bootcamp/designing-for-bharat-a-field-guide-to-inclusive-ux-in-rural-agri-tech-ecosystems-in-india-14a22fc42112'
           vidLink='images/case_research.webp'
           />
         </BentoTilt>

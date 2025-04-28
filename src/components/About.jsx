@@ -51,7 +51,7 @@ const About = () => (
       <BentoTilt className="relative mb-4 w-full md:w-2/3 overflow-hidden rounded-md md:h-[65vh]">
         <div className="flex flex-col bg-website-organge rounded-3xl h-[40vh] md:h-[65vh] gap-8 md:gap-24  p-8">
           <p className="font-satoshi text-xl md:text-3xl/relaxed font-normal text-brown-font">
-            Design is about meeting users where they are, anticipating where they’re headed, and using data to guide them there with clarity and intent.
+          Product Designer specializing in rural Agri-Tech.<br/>Grounded in HCI principles, building usable, scalable systems for low-tech users.
           </p>
           <img src="icons/icon_website.svg" className='size-20 md:size-40' />
         </div>

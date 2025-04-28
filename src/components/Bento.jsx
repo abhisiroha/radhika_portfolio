@@ -79,13 +79,15 @@ export const BentoCard = ({title, description , link="https://medium.com/design-
             <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
           )}
         </div>
+        
         <Button buttonTitle={buttonText} href={link} />
+        
       </div>
     </div>
   );
 };
 
-export const BentoCardImage = ({title, description , link="https://medium.com/design-bootcamp/boosting-adoption-rate-by-35-a-ux-case-study-on-milestone-driven-rewards-for-kirana-stores-febb58e7c540", buttonText="Case Study", vidLink="videos/app_new.mp4"}) => {
+export const BentoCardImage = ({title, description , link="https://medium.com/design-bootcamp/boosting-adoption-rate-by-35-a-ux-case-study-on-milestone-driven-rewards-for-kirana-stores-febb58e7c540", buttonText="Case Study", vidLink="videos/app_new.mp4", secButtonText="Download", secondLink="https://drive.google.com/file/d/1YccF_glJjOZUVKuxyJBUcDtVUWO09FHP/view"}) => {
 
   return (
     <div className="relative size-full rounded-3xl overflow-hidden">
@@ -97,7 +99,12 @@ export const BentoCardImage = ({title, description , link="https://medium.com/de
             <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
           )}
         </div>
-        <Button buttonTitle={buttonText} href={link} />
+        <div className="flex gap-8">
+          <Button buttonTitle={buttonText} href={link} />
+          <Button buttonTitle={secButtonText} href={secondLink} iconType="down" />
+
+        </div>
+        
       </div>
     </div>
   );
