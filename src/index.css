@@ -4,8 +4,8 @@
 html {
     scroll-behavior: smooth;
     background-color: white;
-  }
-  
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
@@ -13,8 +13,8 @@ html {
     src: url("/fonts/Satoshi-Regular.woff2");
 }
 
-@theme{
-    --font-satoshi:  Satoshi, "sans-serif";
+@theme {
+    --font-satoshi: Satoshi, "sans-serif";
     --font-noto-sans: NotoSans, "sans-serif";
     --font-dream-avenue: DreamAvenue, "sans-serif";
     --font-zentry: Zentry, "sans-serif";
@@ -23,9 +23,9 @@ html {
     --color-brown-font: #451C19;
 }
 
-@layer utilities{
+@layer utilities {
     .bento-tilt_1 {
-    @apply relative border  overflow-hidden rounded-md transition-transform duration-300 ease-out;
+        @apply relative border overflow-hidden rounded-md transition-transform duration-300 ease-out;
     }
 
     /* .bento-tilt_2 {
@@ -33,17 +33,17 @@ html {
     } */
 
     .bento-title {
-    @apply text-sm md:text-2xl font-satoshi text-pretty;
+        @apply text-sm md:text-2xl font-satoshi text-pretty;
     }
 
     .special-font b {
         font-family: "Zentry";
         font-feature-settings: "ss01" on;
-      }
+    }
 
     .animated-title {
         @apply flex flex-col gap-1 text-7xl lowercase leading-[.8] text-white sm:px-32 md:text-[6rem];
-        }
+    }
 
     .animated-word {
         @apply font-dream-avenue font-black opacity-0;
@@ -55,8 +55,8 @@ html {
     .floating-nav {
         @apply bg-black rounded-full border;
     }
+
     .nav-hover-btn {
         @apply relative ms-10 font-satoshi text-lg text-white after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
-      }
-
+    }
 }
