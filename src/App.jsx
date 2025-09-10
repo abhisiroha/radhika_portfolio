@@ -1,5 +1,4 @@
 import React from 'react'
-import { Analytics } from '@vercel/analytics/react';
 import Hero from './components/Hero'
 import About from './components/About'
 import Projects from './components/Projects'
@@ -15,7 +14,6 @@ const App = () => {
       <About/>
       <Contact/>
       <NavBar/>
-      <Analytics />
     </main>
   )
 }
